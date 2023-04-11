@@ -8,7 +8,7 @@ import Footer from './HomePage-Components/Footer'
 
 export default function BusinessPage() {
   return (
-    <div className=''>
+    <div className='overflow-x-hidden w-screen'>
      <NavigationBar/>
      <Header/>
      <HelpSection/>

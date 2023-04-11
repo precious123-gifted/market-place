@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const withPlugins = require('next-compose-plugins')
+const withTM = require('next-transpile-modules')(['gsap']);
 const optimizedImages = require('next-optimized-images')
 
 const nextConfig = {
@@ -10,6 +11,13 @@ const nextConfig = {
 
   
 }
+
+
+module.exports = withTM({
+  webpack(config) {
+    return config;
+  },
+});
 
 module.exports = withPlugins([
   [
