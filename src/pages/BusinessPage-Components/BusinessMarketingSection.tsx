@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function BusinessMarketingSection() {
   return (
-    <div className='bg-gradient-to-b from-grey  to-pink text-center landscape:h-[55vw] portrait:h-[170vw] portrait:pt-[6%]   portrait:sm:h-[130vw] w-[100vw]  text-darkgreen flex justify-center items-center '  >
+    <div className='bg-gradient-to-b from-grey  to-pink text-center landscape:h-[55vw] portrait:h-[185vw] portrait:pt-[6%]   portrait:sm:h-[130vw] w-[100vw]  text-darkgreen flex justify-center items-center '  >
 
 
 
@@ -14,7 +14,7 @@ export default function BusinessMarketingSection() {
 </div>
 
       <div className="header mb-[2%] portrait:mb-[8%] w-full flex justify-center items-center   text-[2.5vw]  portrait:text-[6vw]  portrait:sm:text-[5vw]">
-  <span>Learn how to Market Your Business on Trustmonia like a Pro</span>
+  <span>Learn how to Market Your Business on Our Market Place like a Pro</span>
 </div>
 
 <div className="header mb-[5%] portrait:mb-[8%] w-full flex justify-center items-center   text-[2.3vw]  portrait:text-[5.5vw]  portrait:sm:text-[4vw]">

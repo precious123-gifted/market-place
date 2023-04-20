@@ -19,8 +19,8 @@ export default function AboutUsSection() {
 
       <div className="relative z-10 content w-[95%] h-[80%] flex-col items-center justify-center ">
 
-<div className="header mb-[5%] w-full flex justify-center items-center   text-[2.5vw]  portrait:text-[7vw]  portrait:sm:text-[5vw]">
-  <span>About Trustmonia</span>
+<div className="header mb-[5%] w-full flex justify-center items-center text-center  text-[2.5vw]  portrait:text-[7vw]  portrait:sm:text-[5vw]">
+  <span>About School Support Market Place</span>
 </div>
 
 
