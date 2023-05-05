@@ -52,7 +52,7 @@ useEffect(()=>{
          <Link className='landscape:hidden  flex justify-center items-center h-full text-[4vw] portrait:sm-[5.5vw] '  href={'/'}> <div className="business_page-btn font-M_PLUS_1 px-[20px] bg-blue text-darkgreen  cursor-pointer h-4/5 rounded  transition-all ease-in duration-[0.5s] active:bg-green hover:text-darkgreen  flex items-center justify-between ">For Customers</div></Link>
        <div className="menu  landscape:hidden  cursor-pointer flex items-center justify-end  "><Image  onClick={toogleMenuState}  className='w-[10vw] portrait:sm:w-[6vw] object-contain aspect-[4/3]' src={burgerMenu}  alt='' /></div>
 
-       <div className="list-items portrait:hidden h-full w-[60%] flex items-center justify-between"><Link href={'/AboutUs'} className='h-full'><div className="list  px-[20px]  cursor-pointer h-full  transition-all ease-in duration-[0.5s] hover:bg-blue hover:text-darkgreen  hover:text-[1.7vw] flex items-center justify-between">About</div></Link><div className="list px-[20px]  cursor-pointer h-full  transition-all ease-in duration-[0.5s] hover:bg-blue hover:text-darkgreen  hover:text-[1.7vw] flex items-center justify-between">Contact</div><Link href={'/SchoolSignUp'} className='h-full'><div className="list px-[1.5vw]  cursor-pointer h-full  transition-all ease-in duration-[0.5s] hover:bg-blue hover:text-darkgreen  hover:text-[1.7vw] flex items-center justify-between">Login</div></Link><Link className='flex justify-center items-center h-full '  href={'/'}> <div className="business_page-btn font-jamrul px-[20px] bg-blue text-darkgreen  cursor-pointer h-4/5 rounded  transition-all ease-in duration-[0.5s] hover:bg-green hover:text-darkgreen  flex items-center justify-between ">For Schools</div></Link></div>
+       <div className="list-items portrait:hidden h-full w-[60%] flex items-center justify-between"><Link href={'/AboutUs'} className='h-full'><div className="list  px-[20px]  cursor-pointer h-full  transition-all ease-in duration-[0.5s] hover:bg-blue hover:text-darkgreen  hover:text-[1.7vw] flex items-center justify-between">About</div></Link><div className="list px-[20px]  cursor-pointer h-full  transition-all ease-in duration-[0.5s] hover:bg-blue hover:text-darkgreen  hover:text-[1.7vw] flex items-center justify-between">Contact</div><Link href={'/SchoolLogin'} className='h-full'><div className="list px-[1.5vw]  cursor-pointer h-full  transition-all ease-in duration-[0.5s] hover:bg-blue hover:text-darkgreen  hover:text-[1.7vw] flex items-center justify-between">Login</div></Link><Link className='flex justify-center items-center h-full '  href={'/'}> <div className="business_page-btn font-jamrul px-[20px] bg-blue text-darkgreen  cursor-pointer h-4/5 rounded  transition-all ease-in duration-[0.5s] hover:bg-green hover:text-darkgreen  flex items-center justify-between ">For Schools</div></Link></div>
 
          
 
@@ -62,7 +62,7 @@ useEffect(()=>{
 <div   className="closeicon pr-[3%] cursor-pointer flex items-center justify-end"><Image ref={icon}  onClick={toogleMenuState} className='w-[10vw] portrait:sm:w-[6vw] object-contain aspect-[4/3]' src={exitIcon}  alt='' /></div>
 
 <div className="lists h-[80%] flex flex-col justify-between">
-<Link href={'/SchoolSignUp'} className='h-  full'><div className="list">Login</div></Link>
+<Link href={'/SchoolLogin'} className='h-  full'><div className="list">Login</div></Link>
 <div className="list" >Categories</div>
 <Link href={'/AboutUs'} className=''><div className="list">About Us</div></Link>
 <div className="list">Contact Us</div>
