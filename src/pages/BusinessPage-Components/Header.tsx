@@ -27,9 +27,11 @@ to Know You </span> </div>
 <Image  alt='' src={headerIMG}   className='w-[45vw]    object-contain aspect-[4/3] landscape:object-right portrait:mb-[17%]  portrait:w-[100vw] ' />
 
 
+
+<Link href={'/SchoolLogin'}> 
 <div className="BTN   portrait:text-[7vw]  portrait:sm:text-[4vw] landscape:hidden flex item-center justify-center">
     <span className=' transition-all ease-in duration-[0.5s] bg-lightgreen hover:bg-blue hover:text-armygreen  portrait:p-[3.5vw] portrait:sm:p-[1.5vw] text-grey rounded cursor-pointer'>Register Your Business</span>
-</div>
+</div></Link>
 </div>
 
         </div>

@@ -17,9 +17,11 @@ THEY CAN TRUST AND SCHOOLS WITH RELIABLE SERVICE PROVIDERS</span> </div>
 
 
 
+<Link href={'/SchoolLogin'}>
 <div className="BTN text-[2vw] portrait:hidden">
     <span className=' transition-all ease-in duration-[0.5s] bg-armygreen hover:bg-blue hover:text-armygreen p-[1vw] text-grey rounded cursor-pointer'>Business Review</span>
-</div>
+</div></Link>
+
 </div>
 
 <div className="section2   lanscape:w-[40%]  landscape:flex landscape:items-start landscape:justify-end ">
