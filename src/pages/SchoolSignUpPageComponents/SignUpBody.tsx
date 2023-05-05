@@ -6,13 +6,13 @@ import Link from 'next/link'
 
 export default function SignUpBody() {
   return (
-    <div className='bg-grey text-darkgreen h-screen portrait:h-[200vw] w-full pt-[5%] portrait:pt-[10%]  flex justify-center'>
+    <div className='bg-grey text-darkgreen h-screen portrait:h-[250vw] w-full pt-[5%] portrait:pt-[10%]  flex justify-center'>
       <div className="content  portrait:h-full landscape:flex landscape:justify-between  portrait:flex-col portrait:items-end w-[95%]">
   <div className="section1 w-[45%] ">
             <Image alt='' src={headerIMG} className='   object-contain aspect-[4/3] portrait:hidden'/>
         </div>
-        <div className="section2  overflow-y-auto scrollbar-hide  landscape:w-[50%] bg-green bg-opacity-25 h-[90%] rounded pt-[3%] ">
-                <div className="content h-[60vw] flex flex-col items-center">
+        <div className="section2  overflow-y-auto scrollbar-hide  landscape:w-[50%] bg-green bg-opacity-25 h-[90%]  rounded pt-[3%] ">
+                <div className="content h-[60vw]   flex flex-col items-center">
                                <div className="header mb-[8%] w-full flex justify-center items-center text-center  text-[2.5vw]  portrait:text-[7vw]  portrait:sm:text-[5vw]">
   <span>MAKE REVIEWS AND DISCOVER COMPANIES</span>
 </div>    
