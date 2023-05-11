@@ -32,6 +32,8 @@ export default function SignUpBody() {
 const handleSignup = async (event: React.FormEvent<HTMLFormElement>) => {
   event.preventDefault()
 
+alert('you have successfully signed up')
+
   const isValid = validateData()
 
   if (isValid) {
@@ -39,7 +41,7 @@ const handleSignup = async (event: React.FormEvent<HTMLFormElement>) => {
 
       try {
           setLoading(true)
-          const apiRes = await axios.post("https://market-place-five-beta.vercel.app/api/auth/signup", data)
+          const apiRes = await axios.post(process.env.API_ENDPOINT + "/api/auth/signup", data)
 
           if (apiRes?.data?.success) {
               // save data in session using next auth
@@ -115,12 +117,12 @@ const handleInputChange = (event: React.ChangeEvent<HTMLInputElement   | HTMLSel
 
 
   return (
-    <div className='bg-grey text-darkgreen h-screen portrait:h-[250vw] w-full pt-[5%] portrait:pt-[10%]  flex justify-center'>
+    <div className='bg-grey text-darkgreen landscape:h-screen  w-full pt-[5%] portrait:pt-[10%]  flex justify-center'>
       <div className="content  portrait:h-full landscape:flex landscape:justify-between  portrait:flex-col portrait:items-end w-[95%]">
   <div className="section1 w-[45%] ">
             <Image alt='' src={headerIMG} className='   object-contain aspect-[4/3] portrait:hidden'/>
         </div>
-        <div className="section2  overflow-y-auto scrollbar-hide  landscape:w-[50%] bg-green bg-opacity-25 h-[90%]  rounded pt-[3%] pb-[5%] ">
+        <div className="section2  overflow-y-auto scrollbar-hide  landscape:w-[50%] bg-green bg-opacity-25 landscape:h-[90%]    rounded pt-[3%] pb-[5%] ">
 
           <form action="" onSubmit={handleSignup} >
 
