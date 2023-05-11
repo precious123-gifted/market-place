@@ -39,7 +39,7 @@ const handleSignup = async (event: React.FormEvent<HTMLFormElement>) => {
 
       try {
           setLoading(true)
-          const apiRes = await axios.post("https://market-place-tavy-git-master-precious123-gifted.vercel.app/api/auth/signup", data)
+          const apiRes = await axios.post("https://market-place-five-beta.vercel.app/api/auth/signup", data)
 
           if (apiRes?.data?.success) {
               // save data in session using next auth
