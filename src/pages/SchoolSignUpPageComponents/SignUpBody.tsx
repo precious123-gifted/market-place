@@ -41,7 +41,7 @@ alert('you have successfully signed up')
 
       try {
           setLoading(true)
-          const apiRes = await axios.post("https://market-place-hpjtvwwc5-precious123-gifted.vercel.app/api/auth/signup", data)
+          const apiRes = await axios.post("https://market-place-api.vercel.app/api/auth/signup", data)
 
           if (apiRes?.data?.success) {
               // save data in session using next auth
