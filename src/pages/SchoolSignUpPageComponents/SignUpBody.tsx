@@ -32,7 +32,7 @@ export default function SignUpBody() {
 const handleSignup = async (event: React.FormEvent<HTMLFormElement>) => {
   event.preventDefault()
 
-alert('you have successfully signed up')
+
 
   const isValid = validateData()
 
@@ -45,6 +45,9 @@ alert('you have successfully signed up')
 
           if (apiRes?.data?.success) {
               // save data in session using next auth
+
+              alert('data was sent')
+
 
               const loginRes = await loginUser({
                   email: data.email,
