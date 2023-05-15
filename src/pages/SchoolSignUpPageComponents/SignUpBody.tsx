@@ -71,9 +71,9 @@ const handleSignup = async (event: React.FormEvent<HTMLFormElement>) => {
           }
       } catch (error: unknown) {
           if (error instanceof AxiosError) {
-              const errorMsg = error.response?.data?.error
-              setSubmitError(errorMsg)
-              console.log(errorMsg)
+              // const errorMsg = error.response?.data?.error
+              // setSubmitError(errorMsg)
+              console.log(error)
           }
       }
 
