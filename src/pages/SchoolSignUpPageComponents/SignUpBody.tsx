@@ -57,17 +57,17 @@ const handleSignup = async (event: React.FormEvent<HTMLFormElement>) => {
               alert('data was sent')
 
 
-              const loginRes = await loginUser({
-                  email: data.email,
-                  password: data.password
-              })
+              // const loginRes = await loginUser({
+              //     email: data.email,
+              //     password: data.password
+              // })
 
-              if (loginRes && !loginRes.ok) {
-                  setSubmitError(loginRes.error || "")
-              }
-              else {
-                  Router.push("/")
-              }
+              // if (loginRes && !loginRes.ok) {
+              //     setSubmitError(loginRes.error || "")
+              // }
+              // else {
+              //     Router.push("/")
+              // }
           }
       } catch (error: unknown) {
           if (error instanceof AxiosError) {
