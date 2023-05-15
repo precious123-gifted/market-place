@@ -73,6 +73,7 @@ const handleSignup = async (event: React.FormEvent<HTMLFormElement>) => {
           if (error instanceof AxiosError) {
               const errorMsg = error.response?.data?.error
               setSubmitError(errorMsg)
+              console.log(errorMsg)
           }
       }
 
