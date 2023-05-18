@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState,useRef,useEffect } from 'react'
 import Image from 'next/image'
 import headerIMG from '../../../public/assets/header-img.png'
 import googleIcon from '../../../public/assets/google-icon.png'
@@ -73,7 +73,7 @@ const handleSignup = async (event: React.FormEvent<HTMLFormElement>) => {
           if (error instanceof AxiosError) {
               const errorMsg = error.response?.data?.error
               setSubmitError(errorMsg)
-              
+              console.log(error.response?.data?.error)
           }
       }
 
@@ -94,7 +94,8 @@ const handleInputChange = (event: React.ChangeEvent<HTMLInputElement   | HTMLSel
         const err = []
 
         if (data.firstName?.length < 1) {
-            err.push({ firstName: "First name must be atleast 4 characters long" })
+            err.push({ firstName: "First name must be atleast 1 characters long" })
+           
         }
         else if (data.firstName?.length > 30) {
             err.push({ firstName: "First name should be less than 30 characters" })
@@ -110,6 +111,7 @@ const handleInputChange = (event: React.ChangeEvent<HTMLInputElement   | HTMLSel
 
         else if (data.password?.length < 6) {
             err.push({ password: "Password should be atleast 6 characters long" })
+            alert('password is too short')
         }
         else if (data.password !== data.confirmPassword) {
             err.push({ confirmPassword: "Passwords don't match" })
@@ -124,6 +126,54 @@ const handleInputChange = (event: React.ChangeEvent<HTMLInputElement   | HTMLSel
             return true
         }
     }
+
+
+
+    function checkPasswordValidity(password: string): boolean {
+      const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*'?&])[A-Za-z\d@$!%*?&]{8,}$/;
+      return passwordRegex.test(password);
+    }
+    
+    function checkPasswordInterval(passwordInput: HTMLInputElement): void {
+      let timeoutId: ReturnType<typeof setTimeout> | undefined;
+    
+      const checkValidity = (): void => {
+        const password = passwordInput.value;
+        const isValid = checkPasswordValidity(password);
+    
+       if (isValid) {
+        passwordInput.style.border = '2px solid green' 
+
+        } else {
+          if(passwordInput.value){
+          passwordInput.style.border = '2px solid pink'  
+          }
+        else  if(!passwordInput.value){
+          passwordInput.style.border = 'none'  
+          }
+         }
+     
+        timeoutId = setTimeout(checkValidity, 500);
+      };
+    
+      passwordInput.addEventListener('input', () => {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(checkValidity, 500);
+      });
+    
+      // Start the initial timeout check
+      timeoutId = setTimeout(checkValidity, 500);
+    }
+    
+const passwordInput = useRef<HTMLInputElement>(null)
+    
+
+    useEffect(()=>{
+      if (passwordInput.current) {
+        checkPasswordInterval(passwordInput.current);
+      }
+
+    })
 
 
 
@@ -195,9 +245,9 @@ const handleInputChange = (event: React.ChangeEvent<HTMLInputElement   | HTMLSel
 
 </div>
 
-<div className="input-div flex flex-col justify-between items-center w-[70%] portrait:w-[90%]   portrait:sm:w-[90%] portrait:sm:text-[3.5vw] mb-[7vw] portrait:mb-[12vw]">
+<div className="input-div flex flex-col justify-between items-center w-[70%] portrait:w-[90%]   portrait:sm:w-[90%] portrait:sm:text-[3.5vw] mb-[3vw] portrait:mb-[7vw]">
 <span className='self-start mb-2'>PASSWORD</span>
-<input  required  type="text"  onChange={handleInputChange}  value={data.password}  name="password" id="" className='border-none outline-none rounded h-[3vw] portrait:h-[10vw] w-[100%] px-2 portrait:sm:px-[2vw]'/>
+<input  required  type="text"  onChange={handleInputChange}   value={data.password}  name="password" ref={passwordInput} id="passwordInput" className=' outline-none rounded h-[3vw] portrait:h-[10vw] w-[100%] px-2 portrait:sm:px-[2vw]'/>
 
 </div>
 
