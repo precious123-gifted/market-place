@@ -38,7 +38,7 @@ export default function Login() {
      <span className='w-[60%] h-[4vw]   portrait:h-[10vw] portrait:w-[70%] portrait:sm:w-[60%]  transition-all ease-in duration-[0.5s] bg-lightgreen hover:bg-blue hover:text-armygreen   px-[2vw] py-[0.5vw] text-grey rounded cursor-pointer flex justify-center items-center'> <span>SIGN IN</span> </span>
 </div>
 <div className="input-div flex flex-col justify-between items-center w-[70%] portrait:w-[90%]   portrait:sm:w-[90%] portrait:sm:text-[3.5vw] mb-[3vw] portrait:mb-[7vw]">
-<Link  href={'/SchoolSignUp'} ><span className='self-start mb-2'>do not have an account ? sign up</span></Link>  
+<Link  href={'/SchoolSignUp'} ><span className='self-start mb-2 underline'>do not have an account ? sign up</span></Link>  
 </div>
 
 
