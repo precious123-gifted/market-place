@@ -131,6 +131,9 @@ const handleInputChange = (event: React.ChangeEvent<HTMLInputElement   | HTMLSel
 const passwordInput = useRef<HTMLInputElement>(null)
 const passwordStrengthText = useRef<HTMLSpanElement>(null)  
 
+
+
+
     function checkPasswordValidity(password: string): boolean {
       const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*'?&])[A-Za-z\d@$!%*?&]{8,}$/;
       return passwordRegex.test(password);
@@ -142,18 +145,23 @@ const passwordStrengthText = useRef<HTMLSpanElement>(null)
       const checkValidity = (): void => {
         const password = passwordInput.value;
         const isValid = checkPasswordValidity(password);
+
+        
     
        if (isValid) {
         passwordInput.style.border = '2px solid green' 
-        if(passwordStrengthText.current)
-          passwordStrengthText.current.style.position = 'absolute' 
+        if(passwordStrengthText.current){
+          passwordStrengthText.current.style.display = 'none'  
+      passwordStrengthText.current.style.position = 'absolute'
+      }
+        
 
         } else {
           if(passwordInput.value){
           passwordInput.style.border = '2px solid pink'
 
           if(passwordStrengthText.current){
-              passwordStrengthText.current.style.visibility = 'visible'  
+              passwordStrengthText.current.style.display = 'block'  
           passwordStrengthText.current.style.position = 'relative'
           }
         
@@ -163,7 +171,7 @@ const passwordStrengthText = useRef<HTMLSpanElement>(null)
 
 
           if(passwordStrengthText.current){
-            passwordStrengthText.current.style.visibility = 'hidden'  
+            passwordStrengthText.current.style.display = 'none'  
         passwordStrengthText.current.style.position = 'absolute'
         }
           
@@ -186,6 +194,7 @@ const passwordStrengthText = useRef<HTMLSpanElement>(null)
  
 
     useEffect(()=>{
+    
       if (passwordInput.current) {
         checkPasswordInterval(passwordInput.current);
       }
@@ -265,7 +274,7 @@ const passwordStrengthText = useRef<HTMLSpanElement>(null)
 <div className="input-div flex flex-col justify-between items-center w-[70%] portrait:w-[90%]   portrait:sm:w-[90%] portrait:sm:text-[3.5vw] mb-[3vw] portrait:mb-[7vw]">
 <span className='self-start mb-2'>PASSWORD</span>
 <input  required  type="text"  onChange={handleInputChange}   value={data.password}  name="password" ref={passwordInput} id="passwordInput" className='ease-in-out duration-400 outline-none rounded h-[3vw] portrait:h-[10vw] w-[100%] px-2 portrait:sm:px-[2vw]'/>
-<span className='self-start  text-[1.1vw]'  ref={passwordStrengthText}>password is too weak , please make sure your password includes a mix of uppercase,lowercase and special characters.</span>
+<span className={'hidden self-start  text-[1.1vw] portrait:text-[3vw]  portrait:sm:text-[2.1vw]'}  ref={passwordStrengthText}>password is too weak , please make sure your password includes a mix of uppercase,lowercase and special characters.</span>
 </div>
 
 
@@ -281,7 +290,7 @@ const passwordStrengthText = useRef<HTMLSpanElement>(null)
 </div>
 </button>
 <div className="input-div flex flex-col justify-between items-center w-[70%] portrait:w-[90%]   portrait:sm:w-[90%] portrait:sm:text-[3.5vw] mb-[3vw] portrait:mb-[7vw]">
-<Link href={'/SchoolLogin'}><span className='self-start mb-2'>already have an account ? Login</span> </Link> 
+<Link href={'/SchoolLogin'}><span className='self-start mb-2 underline'>already have an account ? Login</span> </Link> 
 </div>
 
 
