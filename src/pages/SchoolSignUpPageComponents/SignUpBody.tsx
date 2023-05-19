@@ -128,6 +128,8 @@ const handleInputChange = (event: React.ChangeEvent<HTMLInputElement   | HTMLSel
     }
 
 
+const passwordInput = useRef<HTMLInputElement>(null)
+const passwordStrengthText = useRef<HTMLSpanElement>(null)  
 
     function checkPasswordValidity(password: string): boolean {
       const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*'?&])[A-Za-z\d@$!%*?&]{8,}$/;
@@ -143,30 +145,45 @@ const handleInputChange = (event: React.ChangeEvent<HTMLInputElement   | HTMLSel
     
        if (isValid) {
         passwordInput.style.border = '2px solid green' 
+        if(passwordStrengthText.current)
+          passwordStrengthText.current.style.position = 'absolute' 
 
         } else {
           if(passwordInput.value){
-          passwordInput.style.border = '2px solid pink'  
+          passwordInput.style.border = '2px solid pink'
+
+          if(passwordStrengthText.current){
+              passwordStrengthText.current.style.visibility = 'visible'  
+          passwordStrengthText.current.style.position = 'relative'
+          }
+        
           }
         else  if(!passwordInput.value){
           passwordInput.style.border = 'none'  
+
+
+          if(passwordStrengthText.current){
+            passwordStrengthText.current.style.visibility = 'hidden'  
+        passwordStrengthText.current.style.position = 'absolute'
+        }
+          
           }
          }
      
-        timeoutId = setTimeout(checkValidity, 500);
+        timeoutId = setTimeout(checkValidity, 600);
       };
     
       passwordInput.addEventListener('input', () => {
         clearTimeout(timeoutId);
-        timeoutId = setTimeout(checkValidity, 500);
+        timeoutId = setTimeout(checkValidity, 600);
       });
     
       // Start the initial timeout check
-      timeoutId = setTimeout(checkValidity, 500);
+      timeoutId = setTimeout(checkValidity, 600);
     }
     
-const passwordInput = useRef<HTMLInputElement>(null)
-    
+
+ 
 
     useEffect(()=>{
       if (passwordInput.current) {
@@ -247,8 +264,8 @@ const passwordInput = useRef<HTMLInputElement>(null)
 
 <div className="input-div flex flex-col justify-between items-center w-[70%] portrait:w-[90%]   portrait:sm:w-[90%] portrait:sm:text-[3.5vw] mb-[3vw] portrait:mb-[7vw]">
 <span className='self-start mb-2'>PASSWORD</span>
-<input  required  type="text"  onChange={handleInputChange}   value={data.password}  name="password" ref={passwordInput} id="passwordInput" className=' outline-none rounded h-[3vw] portrait:h-[10vw] w-[100%] px-2 portrait:sm:px-[2vw]'/>
-
+<input  required  type="text"  onChange={handleInputChange}   value={data.password}  name="password" ref={passwordInput} id="passwordInput" className='ease-in-out duration-400 outline-none rounded h-[3vw] portrait:h-[10vw] w-[100%] px-2 portrait:sm:px-[2vw]'/>
+<span className='self-start  text-[1.1vw]'  ref={passwordStrengthText}>password is too weak , please make sure your password includes a mix of uppercase,lowercase and special characters.</span>
 </div>
 
 
