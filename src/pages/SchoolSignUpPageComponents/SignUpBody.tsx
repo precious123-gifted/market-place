@@ -227,30 +227,30 @@ const passwordStrengthText = useRef<HTMLSpanElement>(null)
 
 
 <div className="input-div flex flex-col justify-between items-center w-[70%] portrait:w-[90%]   portrait:sm:w-[90%] portrait:sm:text-[3.5vw] mb-[3vw] portrait:mb-[7vw]">
-<span className='self-start mb-2'>COMPANY NAME</span>
-<input  required type="text"  onChange={handleInputChange}  value={data.companyName}     name="companyName" id="" className='border-none outline-none rounded h-[3vw] portrait:h-[10vw] w-[100%] px-2 portrait:sm:px-[2vw]'/>
+<label htmlFor='companyName' className='self-start mb-2'>COMPANY NAME</label>
+<input title='companyName' required type="text"  onChange={handleInputChange}  value={data.companyName}     name="companyName" id="" className='border-none outline-none rounded h-[3vw] portrait:h-[10vw] w-[100%] px-2 portrait:sm:px-[2vw]'/>
 
 </div>
 
 <div className="input-div flex flex-col justify-between items-center w-[70%] portrait:w-[90%]   portrait:sm:w-[90%] portrait:sm:text-[3.5vw] mb-[3vw] portrait:mb-[7vw]">
-<span className='self-start mb-2'>FIRST NAME</span>
-<input required type="text"  onChange={handleInputChange}    value={data.firstName}  name="firstName" id="" className='border-none outline-none rounded h-[3vw] portrait:h-[10vw] w-[100%] px-2 portrait:sm:px-[2vw]'/>
+<label htmlFor='firstName'  className='self-start mb-2'>FIRST NAME</label>
+<input title='firstName' required type="text"  onChange={handleInputChange}    value={data.firstName}  name="firstName" id="" className='border-none outline-none rounded h-[3vw] portrait:h-[10vw] w-[100%] px-2 portrait:sm:px-[2vw]'/>
 
 </div>
 <div className="input-div flex flex-col justify-between items-center w-[70%] portrait:w-[90%]   portrait:sm:w-[90%] portrait:sm:text-[3.5vw] mb-[3vw] portrait:mb-[7vw]">
-<span className='self-start mb-2'>LAST NAME</span>
-<input  required type="text"  onChange={handleInputChange}    value={data.lastName}   name="lastName" id="" className='border-none outline-none rounded h-[3vw] portrait:h-[10vw] w-[100%] px-2 portrait:sm:px-[2vw]'/>
+<label htmlFor='lastName' className='self-start mb-2'>LAST NAME</label>
+<input title='lastName' required type="text"  onChange={handleInputChange}    value={data.lastName}   name="lastName" id="" className='border-none outline-none rounded h-[3vw] portrait:h-[10vw] w-[100%] px-2 portrait:sm:px-[2vw]'/>
 
 </div>
 <div className="input-div flex flex-col justify-between items-center w-[70%] portrait:w-[90%]   portrait:sm:w-[90%] portrait:sm:text-[3.5vw] mb-[3vw] portrait:mb-[7vw]">
-<span className='self-start mb-2'>JOB TITLE</span>
-<input  required type="text"  onChange={handleInputChange}   value={data.jobTitle}  name="jobTitle" id="" className='border-none outline-none rounded h-[3vw] portrait:h-[10vw] w-[100%] px-2 portrait:sm:px-[2vw]'/>
+<label className='self-start mb-2'>JOB TITLE</label>
+<input title='jobTitle' required type="text"  onChange={handleInputChange}   value={data.jobTitle}  name="jobTitle" id="" className='border-none outline-none rounded h-[3vw] portrait:h-[10vw] w-[100%] px-2 portrait:sm:px-[2vw]'/>
 
 </div>
 
 <div className="input-div flex flex-col justify-between items-center w-[70%] portrait:w-[90%]   portrait:sm:w-[90%] portrait:sm:text-[3.5vw] mb-[3vw] portrait:mb-[7vw]">
-<span className='self-start mb-2'>INDUSTRY</span>
-<select  required name="industry"  onChange={handleInputChange} value={data.industry} id="">
+<label className='self-start mb-2'>INDUSTRY</label>
+<select title='industry' required name="industry"  onChange={handleInputChange} value={data.industry} id="">
 <option value="">-- Select an option --</option>
   <option value="edtech">Education Technology (EdTech) Industry</option>
   <option value="school-supplies">School Supplies Industry</option>
@@ -266,21 +266,21 @@ const passwordStrengthText = useRef<HTMLSpanElement>(null)
 </div>
 
 <div className="input-div flex flex-col justify-between items-center w-[70%] portrait:w-[90%]   portrait:sm:w-[90%] portrait:sm:text-[3.5vw] mb-[3vw] portrait:mb-[7vw]">
-<span className='self-start mb-2'>EMAIL</span>
-<input  required  type="email"  onChange={handleInputChange}  value={data.email}  name="email" id="" className='border-none outline-none rounded h-[3vw] portrait:h-[10vw] w-[100%] px-2 portrait:sm:px-[2vw]'/>
+<label htmlFor='email' className='self-start mb-2'>EMAIL</label>
+<input title='email' required  type="email"  onChange={handleInputChange}  value={data.email}  name="email" id="" className='border-none outline-none rounded h-[3vw] portrait:h-[10vw] w-[100%] px-2 portrait:sm:px-[2vw]'/>
 
 </div>
 
 <div className="input-div flex flex-col justify-between items-center w-[70%] portrait:w-[90%]   portrait:sm:w-[90%] portrait:sm:text-[3.5vw] mb-[3vw] portrait:mb-[7vw]">
-<span className='self-start mb-2'>PASSWORD</span>
-<input  required  type="text"  onChange={handleInputChange}   value={data.password}  name="password" ref={passwordInput} id="passwordInput" className='ease-in-out duration-400 outline-none rounded h-[3vw] portrait:h-[10vw] w-[100%] px-2 portrait:sm:px-[2vw]'/>
-<span className={'hidden self-start  text-[1.1vw] portrait:text-[3vw]  portrait:sm:text-[2.1vw]'}  ref={passwordStrengthText}>password is too weak , please make sure your password includes a mix of uppercase,lowercase and special characters.</span>
+<label htmlFor='password' className='self-start mb-2'>PASSWORD</label>
+<input title='password' required  type="text"  onChange={handleInputChange}   value={data.password}  name="password" ref={passwordInput} id="passwordInput" className='ease-in-out duration-400 outline-none rounded h-[3vw] portrait:h-[10vw] w-[100%] px-2 portrait:sm:px-[2vw]'/>
+<span className={'hidden self-start  text-[1.1vw] portrait:text-[3.6vw]  portrait:sm:text-[2.1vw]'}  ref={passwordStrengthText}>password is too weak , please make sure your password includes a mix of uppercase,lowercase and special characters.</span>
 </div>
 
 
 <div className="input-div flex flex-col justify-between items-center w-[70%] portrait:w-[90%]   portrait:sm:w-[90%] portrait:sm:text-[3.5vw] mb-[7vw] portrait:mb-[12vw]">
-<span className='self-start mb-2'>CONFIRM PASSWORD</span>
-<input  required  type="text"  onChange={handleInputChange}  value={data.confirmPassword}   name="confirmPassword" id="" className='border-none outline-none rounded h-[3vw] portrait:h-[10vw] w-[100%] px-2 portrait:sm:px-[2vw]'/>
+<label htmlFor='confirmPassword' className='self-start mb-2'>CONFIRM PASSWORD</label>
+<input title='confirmPassword'  required  type="text"  onChange={handleInputChange}  value={data.confirmPassword}   name="confirmPassword" id="" className='border-none outline-none rounded h-[3vw] portrait:h-[10vw] w-[100%] px-2 portrait:sm:px-[2vw]'/>
 
 </div>
 

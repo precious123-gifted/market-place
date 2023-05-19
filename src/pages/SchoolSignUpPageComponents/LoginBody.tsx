@@ -23,14 +23,14 @@ export default function Login() {
 
 
 <div className="input-div flex flex-col justify-between items-center w-[70%] portrait:w-[90%]   portrait:sm:w-[90%] portrait:sm:text-[3.5vw] mb-[3vw] portrait:mb-[7vw]">
-<span className='self-start mb-2'>SIGN IN WITH YOUR EMAIL</span>
-<input type="email" name="school-mail" id="" className='border-none outline-none rounded h-[3vw] portrait:h-[10vw] w-[100%] px-2 portrait:sm:px-[2vw]'/>
+<label htmlFor='email' className='self-start mb-2'>SIGN IN WITH YOUR EMAIL</label>
+<input title='email' type="email" name="school-mail" id="" className='border-none outline-none rounded h-[3vw] portrait:h-[10vw] w-[100%] px-2 portrait:sm:px-[2vw]'/>
 
 </div>
 
 <div className="input-div flex flex-col justify-between items-center w-[70%] portrait:w-[90%]   portrait:sm:w-[90%] portrait:sm:text-[3.5vw] mb-[7vw] portrait:mb-[12vw]">
-<span className='self-start mb-2'>ENTER YOUR PASSWORD</span>
-<input type="email" name="school-mail" id="" className='border-none outline-none rounded h-[3vw] portrait:h-[10vw] w-[100%] px-2 portrait:sm:px-[2vw]'/>
+<label htmlFor='password'  className='self-start mb-2'>ENTER YOUR PASSWORD</label>
+<input title='password' type="email" name="password" id="" className='border-none outline-none rounded h-[3vw] portrait:h-[10vw] w-[100%] px-2 portrait:sm:px-[2vw]'/>
 
 </div>
 
