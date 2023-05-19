@@ -81,7 +81,35 @@ const handleSignup = async (event: React.FormEvent<HTMLFormElement>) => {
   }
 }
 
+const firstName = useRef<HTMLInputElement>(null)
+const lastName = useRef<HTMLInputElement>(null)
+let limit = 2
 
+const confirmPassword = useRef<HTMLInputElement>(null) 
+
+
+const alertUserThatTheirInputedNameIsTooShort = () => {
+  const firstNameInput = firstName.current?.value;
+  const lastNameInput = lastName.current?.value;
+
+  if (firstNameInput && firstNameInput.length < limit) {
+    alert('First name must be at least 2 characters long');
+  }
+
+  if (lastNameInput && lastNameInput.length < limit) {
+    alert('Last name must be at least 2 characters long');
+  }
+};
+
+const checkIfPasswordAndConfirmPasswordMatches = () => {
+  const passwordInpute = passwordInput.current?.value;
+  const confirmPasswordInput = lastName.current?.value;
+
+  if (passwordInpute !== confirmPasswordInput) {
+    alert('your password does not match with the value inputed for confirm password');
+  }
+
+};
 
 const handleInputChange = (event: React.ChangeEvent<HTMLInputElement   | HTMLSelectElement>) => {
 
@@ -93,8 +121,12 @@ const handleInputChange = (event: React.ChangeEvent<HTMLInputElement   | HTMLSel
     const validateData = (): boolean => {
         const err = []
 
+        checkIfPasswordAndConfirmPasswordMatches()
+        alertUserThatTheirInputedNameIsTooShort()
+
         if (data.firstName?.length < 1) {
             err.push({ firstName: "First name must be atleast 1 characters long" })
+            alert('names must be atleast two letters long')
            
         }
         else if (data.firstName?.length > 30) {
@@ -103,6 +135,7 @@ const handleInputChange = (event: React.ChangeEvent<HTMLInputElement   | HTMLSel
 
         if (data.lastName?.length < 1) {
           err.push({ lastName: "Last name must be atleast 4 characters long" })
+          alert('names must be atleast two letters long')
       }
       else if (data.lastName?.length > 30) {
           err.push({ fullName: "Last name should be less than 30 characters" })
@@ -111,7 +144,7 @@ const handleInputChange = (event: React.ChangeEvent<HTMLInputElement   | HTMLSel
 
         else if (data.password?.length < 6) {
             err.push({ password: "Password should be atleast 6 characters long" })
-            alert('password is too short')
+            
         }
         else if (data.password !== data.confirmPassword) {
             err.push({ confirmPassword: "Passwords don't match" })
@@ -234,12 +267,12 @@ const passwordStrengthText = useRef<HTMLSpanElement>(null)
 
 <div className="input-div flex flex-col justify-between items-center w-[70%] portrait:w-[90%]   portrait:sm:w-[90%] portrait:sm:text-[3.5vw] mb-[3vw] portrait:mb-[7vw]">
 <label htmlFor='firstName'  className='self-start mb-2'>FIRST NAME</label>
-<input title='firstName' required type="text"  onChange={handleInputChange}    value={data.firstName}  name="firstName" id="" className='border-none outline-none rounded h-[3vw] portrait:h-[10vw] w-[100%] px-2 portrait:sm:px-[2vw]'/>
+<input ref={firstName} title='firstName' required type="text"  onChange={handleInputChange}    value={data.firstName}  name="firstName" id="" className='border-none outline-none rounded h-[3vw] portrait:h-[10vw] w-[100%] px-2 portrait:sm:px-[2vw]'/>
 
 </div>
 <div className="input-div flex flex-col justify-between items-center w-[70%] portrait:w-[90%]   portrait:sm:w-[90%] portrait:sm:text-[3.5vw] mb-[3vw] portrait:mb-[7vw]">
 <label htmlFor='lastName' className='self-start mb-2'>LAST NAME</label>
-<input title='lastName' required type="text"  onChange={handleInputChange}    value={data.lastName}   name="lastName" id="" className='border-none outline-none rounded h-[3vw] portrait:h-[10vw] w-[100%] px-2 portrait:sm:px-[2vw]'/>
+<input ref={lastName} title='lastName' required type="text"  onChange={handleInputChange}    value={data.lastName}   name="lastName" id="" className='border-none outline-none rounded h-[3vw] portrait:h-[10vw] w-[100%] px-2 portrait:sm:px-[2vw]'/>
 
 </div>
 <div className="input-div flex flex-col justify-between items-center w-[70%] portrait:w-[90%]   portrait:sm:w-[90%] portrait:sm:text-[3.5vw] mb-[3vw] portrait:mb-[7vw]">
@@ -273,14 +306,14 @@ const passwordStrengthText = useRef<HTMLSpanElement>(null)
 
 <div className="input-div flex flex-col justify-between items-center w-[70%] portrait:w-[90%]   portrait:sm:w-[90%] portrait:sm:text-[3.5vw] mb-[3vw] portrait:mb-[7vw]">
 <label htmlFor='password' className='self-start mb-2'>PASSWORD</label>
-<input title='password' required  type="text"  onChange={handleInputChange}   value={data.password}  name="password" ref={passwordInput} id="passwordInput" className='ease-in-out duration-400 outline-none rounded h-[3vw] portrait:h-[10vw] w-[100%] px-2 portrait:sm:px-[2vw]'/>
+<input ref={passwordInput} title='password' required  type="text"  onChange={handleInputChange}   value={data.password}  name="password"  id="passwordInput" className='ease-in-out duration-400 outline-none rounded h-[3vw] portrait:h-[10vw] w-[100%] px-2 portrait:sm:px-[2vw]'/>
 <span className={'hidden self-start  text-[1.1vw] portrait:text-[3.6vw]  portrait:sm:text-[2.1vw]'}  ref={passwordStrengthText}>password is too weak , please make sure your password includes a mix of uppercase,lowercase and special characters.</span>
 </div>
 
 
 <div className="input-div flex flex-col justify-between items-center w-[70%] portrait:w-[90%]   portrait:sm:w-[90%] portrait:sm:text-[3.5vw] mb-[7vw] portrait:mb-[12vw]">
 <label htmlFor='confirmPassword' className='self-start mb-2'>CONFIRM PASSWORD</label>
-<input title='confirmPassword'  required  type="text"  onChange={handleInputChange}  value={data.confirmPassword}   name="confirmPassword" id="" className='border-none outline-none rounded h-[3vw] portrait:h-[10vw] w-[100%] px-2 portrait:sm:px-[2vw]'/>
+<input  ref={confirmPassword} title='confirmPassword'  required  type="text"  onChange={handleInputChange}  value={data.confirmPassword}   name="confirmPassword" id="" className='border-none outline-none rounded h-[3vw] portrait:h-[10vw] w-[100%] px-2 portrait:sm:px-[2vw]'/>
 
 </div>
 
