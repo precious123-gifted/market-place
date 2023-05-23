@@ -103,7 +103,7 @@ const alertUserThatTheirInputedNameIsTooShort = () => {
 
 const checkIfPasswordAndConfirmPasswordMatches = () => {
   const passwordInpute = passwordInput.current?.value;
-  const confirmPasswordInput = lastName.current?.value;
+  const confirmPasswordInput = confirmPassword.current?.value;
 
   if (passwordInpute !== confirmPasswordInput) {
     alert('your password does not match with the value inputed for confirm password');
