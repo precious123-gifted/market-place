@@ -14,7 +14,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import {screenIs} from '../../screenIs.jsx'
 
 
-export  const NavigationBar = forwardRef(() => {
+export default function NavigationBar (){
 
 
   const nav = useRef<HTMLDivElement>(null)
@@ -94,4 +94,4 @@ let renderAnimation = useEffect(()=>{
         </animated.div>
     </div>
   )
-})
+}
