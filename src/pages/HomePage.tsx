@@ -7,7 +7,7 @@ import CustomerService from './HomePage-Components/CustomerService'
 import InterpretCustomerSection from './HomePage-Components/InterpretCustomerSection'
 import ReviewSection from './HomePage-Components/ReviewSection'
 import Footer from './HomePage-Components/Footer'
-import NavigationBar from './HomePage-Components/NavigationBar'
+import {NavigationBar} from './HomePage-Components/NavigationBar'
 
 export default function HomePage() {
   return (
