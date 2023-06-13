@@ -1,24 +1,50 @@
 import React, { useEffect, useRef } from 'react'
+import { RefObject } from 'react'
 import headerIMG from '../../../public/assets/header-img.png'
 import Image from 'next/image'
 import Link from 'next/link'
 import displayDivWhenPageLoads from '../../../public/utilities/animation';
+import { gsap } from 'gsap';
+// import { ScrollTrigger } from 'gsap/ScrollTrigger';
+// gsap.registerPlugin(ScrollTrigger);
 
 
 export default function Header() {
 
 
 
-  const headerTXT = useRef<HTMLDivElement>(null)
+  const headerTXT : RefObject<HTMLDivElement> = useRef(null)
     const headerSVG = useRef<HTMLImageElement>(null)
     const headerBTN1 = useRef<HTMLSpanElement>(null)
     const headerBTN2 = useRef<HTMLSpanElement>(null)
 
 
 
+//     const timeline = gsap.timeline();
+//     timeline.from(headerTXT, { opacity: 0, y: 100, duration: 1 });
+
+    
+
+//  ScrollTrigger.create({
+//       trigger: headerTXT.current,
+//       start: "top center",
+//       end: "bottom center",
+//       animation: timeline,
+//       scrub: true,
+//     });
+    
+
+
+
+  
+
+   
+
+
+
     let renderAnimation = useEffect(()=>{
-      displayDivWhenPageLoads(headerTXT,0.5,1700)
-      displayDivWhenPageLoads(headerSVG,1,2000)
+      displayDivWhenPageLoads(headerTXT,0.5,1900)
+      displayDivWhenPageLoads(headerSVG,1,2200)
       displayDivWhenPageLoads(headerBTN1,0.3,2600)
       displayDivWhenPageLoads(headerBTN2,0.3,2600)
     })
