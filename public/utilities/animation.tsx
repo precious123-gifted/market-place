@@ -2,7 +2,7 @@ import { RefObject } from 'react';
 import { gsap } from 'gsap';
 
 const displayDivWhenPageLoads = (
-  div: RefObject<HTMLDivElement | HTMLButtonElement | HTMLImageElement>,
+  div: RefObject<HTMLDivElement | HTMLButtonElement | HTMLImageElement| HTMLSpanElement >,
   seconds: number,
   timeout: number
 ) => {

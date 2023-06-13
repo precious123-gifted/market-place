@@ -1,5 +1,4 @@
 import React, { forwardRef } from 'react'
-import { ForwardedRef } from 'react';
 import Link from 'next/link'
 import { useSpring, animated } from '@react-spring/web';
 import { useRef } from 'react';
@@ -10,8 +9,7 @@ import exitIcon from  '../../../public/assets/exiticon.png'
 import Image from 'next/image'
 import displayDivWhenPageLoads from '../../../public/utilities/animation';
 import { useEffect } from 'react'
-import useMediaQuery from '@mui/material/useMediaQuery';
-import {screenIs} from '../../screenIs.jsx'
+
 
 
 export default function NavigationBar (){
