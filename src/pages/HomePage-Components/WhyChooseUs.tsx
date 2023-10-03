@@ -5,7 +5,7 @@ import productSVG from '../../../public/assets/product-svg.png'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import Image from 'next/image'
-import { relative } from 'path'
+
 
 
 gsap.registerPlugin(ScrollTrigger);
