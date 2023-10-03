@@ -13,7 +13,7 @@ export default function Header() {
 
 
 
-  const headerTXT : RefObject<HTMLDivElement> = useRef(null)
+  const headerTXT = useRef<HTMLDivElement>(null)
     const headerSVG = useRef<HTMLImageElement>(null)
     const headerBTN1 = useRef<HTMLSpanElement>(null)
     const headerBTN2 = useRef<HTMLSpanElement>(null)
