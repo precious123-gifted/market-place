@@ -1,6 +1,6 @@
 import React from 'react'
 import Header from './HomePage-Components/Header'
-import WhyChooseUs from './HomePage-Components/WhyChooseUs.tsx'
+import WhyChooseUs from './HomePage-Components/WhyChooseUs'
 import AboutUsSection from './HomePage-Components/AboutUsSection'
 import BusinessGrowthSection from './HomePage-Components/BusinessGrowthSection'
 import CustomerService from './HomePage-Components/CustomerService'
