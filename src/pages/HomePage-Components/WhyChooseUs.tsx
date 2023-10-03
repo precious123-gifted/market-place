@@ -14,6 +14,7 @@ export default function WhyChooseUs() {
   
 const headerTxt = useRef<HTMLDivElement>(null)
 const svgDiv = useRef<HTMLDivElement>(null)
+const svgDiv2 = useRef<HTMLDivElement>(null)
 const writeUpDiv1 = useRef<HTMLDivElement>(null)
 const writeUp1 = useRef<HTMLDivElement>(null)
 const writeUpHeader1 = useRef<HTMLDivElement>(null)
@@ -132,6 +133,114 @@ const scrollTriggerAnimation = () =>{
       },
     })
     
+
+
+    ScrollTrigger.create({
+      trigger: writeUpDiv2.current,
+      start: "top 60%",
+      end: "bottom 40%",
+      toggleActions: "restart none none none",
+      onEnter: () => {
+        gsap.to(svgDiv2.current,1.2, {
+          marginLeft:'50%',
+          scrub:1,
+          
+        });
+     setTimeout(()=>{ gsap.to(writeUpHeader2.current,1,{opacity:1,})},600)
+     setTimeout(()=>{ gsap.to(writeUp2.current,1,{opacity:1,})},800)
+    
+      },
+      onLeave: () => {
+        gsap.to(svgDiv2.current,1, {
+          marginLeft:'0%',
+          scrub:1,
+          
+        });
+    
+    
+        setTimeout(()=>{ gsap.to(writeUpHeader2.current,1,{opacity:0,})},100)
+        setTimeout(()=>{ gsap.to(writeUp2.current,1,{opacity:0,})},200)
+        
+      },
+      onLeaveBack: () => {
+        gsap.to(svgDiv2.current,1, {
+          marginLeft:'0%',
+          scrub:1,
+          
+        });
+    
+        setTimeout(()=>{ gsap.to(writeUpHeader2.current,1,{opacity:0,})},100)
+        setTimeout(()=>{ gsap.to(writeUp2.current,1,{opacity:0,})},200)
+    
+      },
+      
+      onEnterBack: () => {
+        gsap.to(svgDiv2.current,1.2, {
+          marginLeft:'50%',
+          scrub:1,
+         
+        });
+    
+        setTimeout(()=>{ gsap.to(writeUpHeader2.current,1,{opacity:1,})},600)
+        setTimeout(()=>{ gsap.to(writeUp2.current,1,{opacity:1,})},800)
+    
+      },
+    })
+
+
+    ScrollTrigger.create({
+      trigger: writeUpDiv3.current,
+      start: "top 60%",
+      end: "bottom 40%",
+      toggleActions: "restart none none none",
+      onEnter: () => {
+        gsap.to(writeUpDiv3.current,1.2, {
+          marginLeft:'60%',
+          scrub:1,
+          
+        });
+     setTimeout(()=>{ gsap.to(writeUpHeader3.current,1,{opacity:1,})},600)
+     setTimeout(()=>{ gsap.to(writeUp3.current,1,{opacity:1,})},800)
+    
+      },
+      onLeave: () => {
+        gsap.to(writeUpDiv3.current,1, {
+          marginLeft:'0%',
+          scrub:1,
+          
+        });
+    
+    
+        setTimeout(()=>{ gsap.to(writeUpHeader3.current,1,{opacity:0,})},100)
+        setTimeout(()=>{ gsap.to(writeUp3.current,1,{opacity:0,})},200)
+        
+      },
+      onLeaveBack: () => {
+        gsap.to(writeUpDiv3.current,1, {
+          marginLeft:'0%',
+          scrub:1,
+          
+        });
+    
+        setTimeout(()=>{ gsap.to(writeUpHeader3.current,1,{opacity:0,})},100)
+        setTimeout(()=>{ gsap.to(writeUp3.current,1,{opacity:0,})},200)
+    
+      },
+      
+      onEnterBack: () => {
+        gsap.to(writeUpDiv3.current,1.2, {
+          marginLeft:'60%',
+          scrub:1,
+         
+        });
+    
+        setTimeout(()=>{ gsap.to(writeUpHeader3.current,1,{opacity:1,})},600)
+        setTimeout(()=>{ gsap.to(writeUp3.current,1,{opacity:1,})},800)
+    
+      },
+    })
+    
+
    }
   
    
@@ -329,13 +438,13 @@ let renderScrollTriggerAnimation = useEffect(()=>{scrollTriggerAnimation()})
 
 
   return (
-    <div className='w-[100vw] landscape:h-[160vw] portrait:h-[350vw] portrait:sm:h-[235vw] bg-grey flex item-center justify-center pt-[6vw]  portrait:pt-[30vw] portrait:sm:pt-[20vw] '>
+    <div className='w-[100vw] landscape:h-[130vw] portrait:h-[350vw] portrait:sm:h-[235vw] bg-grey flex item-center justify-center pt-[6vw]  portrait:pt-[30vw] portrait:sm:pt-[20vw] '>
       <div className="content flex-col justify-between align-center h-full w-[95%]  ">
 <div ref={headerTxt}  className="header opacity-0 text-[2.5vw]  portrait:text-[7vw]  portrait:sm:text-[5vw] text-center mb-[13%] portrait:mb-[30%]">WHY CHOOSE SCHOOL SUPPORT MARKET PLACE</div>
 
  
 
-<div className="section1 flex items-center justify-between mb-[13%] portrait:mb-[25%]">
+<div className="section1 flex items-center justify-between mb-[20%] portrait:mb-[25%]">
 <div ref={svgDiv} className="svg  absolute portrait:hidden ">
 <Image alt='' src={speakerSVG}  className='w-[45vw] object-contain aspect-[4/3]  landscape:object-left ' />
 </div>
@@ -364,7 +473,7 @@ their game.
 
 
 
-<div className="section2 flex items-center justify-between mb-[13%]  portrait:mb-[25%]">
+<div className="section2 flex items-center justify-between mb-[20%]  portrait:mb-[25%]">
 
 
 
@@ -387,7 +496,7 @@ their game.
 
 
 
-<div className="svg  portrait:hidden absolute">
+<div ref={svgDiv2} className="svg  portrait:hidden absolute">
 <Image alt='' src={serviceSVG}  className='w-[45vw] object-contain aspect-[4/3]  landscape:object-right ' />
 </div>
 
