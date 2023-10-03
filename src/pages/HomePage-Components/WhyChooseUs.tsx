@@ -82,7 +82,8 @@ const scrollTriggerAnimation = () =>{
   if(isLandscape()){
     ScrollTrigger.create({
       trigger: writeUpDiv1.current,
-      start: "top center",
+      start: "top 60%",
+      end: "bottom 40%",
       toggleActions: "restart none none none",
       onEnter: () => {
         gsap.to(writeUpDiv1.current,1.2, {
@@ -117,6 +118,7 @@ const scrollTriggerAnimation = () =>{
         setTimeout(()=>{ gsap.to(writeUp1.current,1,{opacity:0,})},200)
     
       },
+      
       onEnterBack: () => {
         gsap.to(writeUpDiv1.current,1.2, {
           marginLeft:'60%',
@@ -140,7 +142,8 @@ const scrollTriggerAnimation = () =>{
     ScrollTrigger.create({
       
       trigger: writeUpDiv1.current,
-      start: "top center",
+      start: "top 60%",
+      end: "bottom 40%",
       toggleActions: "restart none none none",
       onEnter: () => {
         gsap.to(writeUpDiv1.current,1, {
@@ -191,7 +194,8 @@ const scrollTriggerAnimation = () =>{
     ScrollTrigger.create({
       
       trigger: writeUpDiv2.current,
-      start: "top center",
+      start: "top 60%",
+      end: "bottom 40%",
       toggleActions: "restart none none none",
       onEnter: () => {
         gsap.to(writeUpDiv2.current,1, {
@@ -242,7 +246,8 @@ const scrollTriggerAnimation = () =>{
     ScrollTrigger.create({
       
       trigger: writeUpDiv3.current,
-      start: "top center",
+      start: "top 60%",
+      end: "bottom 40%",
       toggleActions: "restart none none none",
       onEnter: () => {
         gsap.to(writeUpDiv3.current,1, {
