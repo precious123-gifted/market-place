@@ -38,14 +38,14 @@ function isLandscape() {
 const scrollTriggerAnimation = () =>{
   
 
-    ScrollTrigger.create({
+ let headerTextAnimation =   ScrollTrigger.create({
       trigger: headerTxt.current,
       start: "25% 80%",
+      end:"bottom 20%",
       toggleActions: "restart none none none",
       onEnter: () => {
         gsap.to(headerTxt.current,1, {
           opacity: 1,
-          bottom:0,
           scrub:1,
           duration:2,
         });
@@ -53,7 +53,6 @@ const scrollTriggerAnimation = () =>{
       onLeave: () => {
         gsap.to(headerTxt.current,1, {
           opacity: 0,
-          bottom:'70px',
           scrub:1,
           duration:2,
         });
@@ -61,7 +60,6 @@ const scrollTriggerAnimation = () =>{
       onLeaveBack: () => {
         gsap.to(headerTxt.current,1, {
           opacity: 0,
-          bottom:'70px',
           scrub:1,
           duration:2,
         });
@@ -69,7 +67,6 @@ const scrollTriggerAnimation = () =>{
       onEnterBack: () => {
         gsap.to(headerTxt.current,1, {
           opacity: 1,
-          bottom:0,
           scrub:1,
           duration:2,
         });
@@ -81,13 +78,13 @@ const scrollTriggerAnimation = () =>{
 
 
   if(isLandscape()){
-    ScrollTrigger.create({
+ let div1Animation =   ScrollTrigger.create({
       trigger: writeUpDiv1.current,
-      start: "top 60%",
-      end: "bottom 40%",
+      start: "bottom 80%",
+      end: "bottom 25%",
       toggleActions: "restart none none none",
       onEnter: () => {
-        gsap.to(writeUpDiv1.current,1.2, {
+        gsap.to(writeUpDiv1.current,1.1, {
           marginLeft:'60%',
           scrub:1,
           
@@ -135,13 +132,13 @@ const scrollTriggerAnimation = () =>{
     
 
 
-    ScrollTrigger.create({
+    let div2Animation =   ScrollTrigger.create({
       trigger: writeUpDiv2.current,
-      start: "top 60%",
-      end: "bottom 40%",
+      start: "bottom 80%",
+      end: "bottom 25%",
       toggleActions: "restart none none none",
       onEnter: () => {
-        gsap.to(svgDiv2.current,1.2, {
+        gsap.to(svgDiv2.current,1.1, {
           marginLeft:'50%',
           scrub:1,
           
@@ -188,13 +185,13 @@ const scrollTriggerAnimation = () =>{
     })
 
 
-    ScrollTrigger.create({
+    let div3Animation =   ScrollTrigger.create({
       trigger: writeUpDiv3.current,
-      start: "top 60%",
-      end: "bottom 40%",
+      start: "bottom 80%",
+      end: "bottom 25%",
       toggleActions: "restart none none none",
       onEnter: () => {
-        gsap.to(writeUpDiv3.current,1.2, {
+        gsap.to(writeUpDiv3.current,1.1, {
           marginLeft:'60%',
           scrub:1,
           
@@ -248,7 +245,7 @@ const scrollTriggerAnimation = () =>{
 
 
 
-    ScrollTrigger.create({
+    let div1Animation =    ScrollTrigger.create({
       
       trigger: writeUpDiv1.current,
       start: "top 60%",
@@ -300,7 +297,7 @@ const scrollTriggerAnimation = () =>{
       },
     })
     
-    ScrollTrigger.create({
+    let div2Animation =   ScrollTrigger.create({
       
       trigger: writeUpDiv2.current,
       start: "top 60%",
@@ -352,7 +349,7 @@ const scrollTriggerAnimation = () =>{
       },
     })
     
-    ScrollTrigger.create({
+    let div3Animation =   ScrollTrigger.create({
       
       trigger: writeUpDiv3.current,
       start: "top 60%",
