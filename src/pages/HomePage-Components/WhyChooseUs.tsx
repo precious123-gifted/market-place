@@ -248,7 +248,7 @@ const scrollTriggerAnimation = () =>{
 
     let headerTextAnimation =   ScrollTrigger.create({
       trigger: headerTxt.current,
-      start: "top 43%",
+      start: "top 70%",
       end:"bottom 10%",
       toggleActions: "restart none none none",
       onEnter: () => {
@@ -284,7 +284,7 @@ const scrollTriggerAnimation = () =>{
     let div1Animation =    ScrollTrigger.create({
       
       trigger: writeUpDiv1.current,
-      start: "top 20%",
+      start: "top 70%",
       end: "bottom 10%",
       toggleActions: "restart none none none",
       onEnter: () => {
@@ -336,7 +336,7 @@ const scrollTriggerAnimation = () =>{
     let div2Animation =   ScrollTrigger.create({
       
       trigger: writeUpDiv2.current,
-      start: "top 20%",
+      start: "top 70%",
       end: "bottom 10%",
       toggleActions: "restart none none none",
       onEnter: () => {
@@ -388,7 +388,7 @@ const scrollTriggerAnimation = () =>{
     let div3Animation =   ScrollTrigger.create({
       
       trigger: writeUpDiv3.current,
-      start: "top 20%",
+      start: "top 70%",
       end: "bottom 10%",
       toggleActions: "restart none none none",
       onEnter: () => {
