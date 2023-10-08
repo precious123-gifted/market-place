@@ -250,7 +250,6 @@ const scrollTriggerAnimation = () =>{
       trigger: headerTxt.current,
       start: "top 43%",
       end:"bottom 10%",
-      markers:true,
       toggleActions: "restart none none none",
       onEnter: () => {
         gsap.to(headerTxt.current,1, {
