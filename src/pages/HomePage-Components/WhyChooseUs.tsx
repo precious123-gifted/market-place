@@ -38,7 +38,15 @@ function isLandscape() {
 const scrollTriggerAnimation = () =>{
   
 
- let headerTextAnimation =   ScrollTrigger.create({
+
+   
+   
+ const animationForDivs = () =>{
+
+
+  if(isLandscape()){
+
+    let headerTextAnimation =   ScrollTrigger.create({
       trigger: headerTxt.current,
       start: "25% 80%",
       end:"bottom 20%",
@@ -72,12 +80,7 @@ const scrollTriggerAnimation = () =>{
         });
       },
     })
-   
-   
- const animationForDivs = () =>{
 
-
-  if(isLandscape()){
  let div1Animation =   ScrollTrigger.create({
       trigger: writeUpDiv1.current,
       start: "bottom 80%",
@@ -243,13 +246,47 @@ const scrollTriggerAnimation = () =>{
    
    if(isPortrait()){
 
-
+    let headerTextAnimation =   ScrollTrigger.create({
+      trigger: headerTxt.current,
+      start: "top 43%",
+      end:"bottom 10%",
+      markers:true,
+      toggleActions: "restart none none none",
+      onEnter: () => {
+        gsap.to(headerTxt.current,1, {
+          opacity: 1,
+          scrub:1,
+          duration:2,
+        });
+      },
+      onLeave: () => {
+        gsap.to(headerTxt.current,1, {
+          opacity: 0,
+          scrub:1,
+          duration:2,
+        });
+      },
+      onLeaveBack: () => {
+        gsap.to(headerTxt.current,1, {
+          opacity: 0,
+          scrub:1,
+          duration:2,
+        });
+      },
+      onEnterBack: () => {
+        gsap.to(headerTxt.current,1, {
+          opacity: 1,
+          scrub:1,
+          duration:2,
+        });
+      },
+    })
 
     let div1Animation =    ScrollTrigger.create({
       
       trigger: writeUpDiv1.current,
-      start: "top 60%",
-      end: "bottom 40%",
+      start: "top 20%",
+      end: "bottom 10%",
       toggleActions: "restart none none none",
       onEnter: () => {
         gsap.to(writeUpDiv1.current,1, {
@@ -300,8 +337,8 @@ const scrollTriggerAnimation = () =>{
     let div2Animation =   ScrollTrigger.create({
       
       trigger: writeUpDiv2.current,
-      start: "top 60%",
-      end: "bottom 40%",
+      start: "top 20%",
+      end: "bottom 10%",
       toggleActions: "restart none none none",
       onEnter: () => {
         gsap.to(writeUpDiv2.current,1, {
@@ -352,8 +389,8 @@ const scrollTriggerAnimation = () =>{
     let div3Animation =   ScrollTrigger.create({
       
       trigger: writeUpDiv3.current,
-      start: "top 60%",
-      end: "bottom 40%",
+      start: "top 20%",
+      end: "bottom 10%",
       toggleActions: "restart none none none",
       onEnter: () => {
         gsap.to(writeUpDiv3.current,1, {
