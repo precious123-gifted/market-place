@@ -48,8 +48,8 @@ const scrollTriggerAnimation = () =>{
 
     let headerTextAnimation =   ScrollTrigger.create({
       trigger: headerTxt.current,
-      start: "25% 80%",
-      end:"bottom 20%",
+      start: "top 70%",
+      end:"bottom 10%",
       toggleActions: "restart none none none",
       onEnter: () => {
         gsap.to(headerTxt.current,1, {
